@@ -26,10 +26,10 @@ const Bodycard = ({ handleLinkClick }) => {
         </motion.div>
         <div className='w-1/3 pt-4 flex flex-col items-center'>
           <p className="text-xl"> 
-            Hello! I'm Adrian and I just graduated Northwestern University with a Bachelor's in Computer Science,
-            and now am currently pursuing a Master's of Computer Science at Northwestern University. I am experienced 
-            as a web-developer and machine learning engineer. My interests include machine learning and deep neural networks, 
-            weightlifting and fashion. I am currently exploring machine learning applications for audio processing.
+            Hello! I&apos;m Adrian and I just graduated from Northwestern University with a Bachelor&apos;s in Computer Science,
+            and now am currently pursuing a Master&apos;s of Computer Science at Northwestern University. I am experienced 
+            as a web developer and machine learning engineer. My interests include machine learning and deep neural networks, 
+            weightlifting, and fashion. I am currently exploring machine learning applications for audio processing.
             Click the prompt icon to check out some of my projects!
           </p>
         </div>

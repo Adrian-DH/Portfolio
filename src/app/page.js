@@ -40,6 +40,11 @@ export default function Home() {
           
               </div>
               <div id='Contact' className="min-h-screen w-full pt-52 pb-40 bg-black">
+              <div className="overflow-hidden font-clash text-7xl font-medium mb-10 ml-40">
+        <div className= "pb-10">
+          Contact Me
+        </div>
+      </div>
                 <LinkB/>
               </div>
               </div>
