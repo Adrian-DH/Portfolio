@@ -1,71 +1,50 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Header from "./components/header";
 import Image from 'next/image'
 import Link from "next/link";
+import Bodycard from "./components/bodycard";
+import { motion, useScroll } from "framer-motion";
+import { } from "react-icons/fi";
+import NavBar from "./components/navbar";
+import RevealCards from "./components/cards";
+import LinkB from './components/links';
+
 export default function Home() {
+  useEffect(() => {
+    document.body.classList.add('no-scroll');
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, []);
+  const [activeSection, setActiveSection] = useState('');
+
+  const handleLinkClick = (section) => {
+    setActiveSection(section);
+  };
   return (
     <main className="">
-        <div id="tag1" className="relative z-10 flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 bg-gradient-to-tr from-pink-500 bg-[length:100%_calc(100%-100vh+5px)] bg-no-repeat py-6 [--tw-gradient-from:rgb(236_72_153)50%] [--tw-gradient-to:rgb(255_255_255)50%] after:fixed after:inset-0 after:top-1.5 after:-z-10 after:bg-black sm:py-12">
-          <Header />
-          <div className="group relative h-screen">
-          <div className="flex flex-col w-full items-start snap-y snap-mandatory overflow-y-auto scroll-smooth">
-              <div className="pl-8"> 
-                <div id="tag2" className="overflow-hidden font-clash text-7xl font-medium mb-10 ml-32">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ">
-                  About Me
-                  </div>
-                </div>
-                <div className="flex items-start space-x-20 ml-32"> 
-                  <Image
-                  src="/silly.png"
-                  width={350}
-                  height={350}
-                  alt="Picture of the author"
-                  />
-                  <div>
-                    <p className="text-lg w-96"> 
-                    Hello! I'm Adrian and I just graduated Northwestern University with a Bachelor's in Computer Science,
-                    and now am currently pursuing a Master's of Computer Science at Northwestern University. I am experienced 
-                    as a web-developer and machine learning engineer. My interests include machine learning and deep neural networks, 
-                    weightlifiting and fashion. Please feel free to reach out with any 
-                    inquiries or opportunities, and while you are here, check out some of my work!
-                    </p>
-                    <Link href="#tag3" className="bg-white-500 mt-8 text-white text-xl py-2 animate-pulse px-4 rounded text-center flex items-center justify-center ">
-                      Continue
-                    </Link>
-                  </div>
-                </div>
+        <div id="Home" className="relative  flex min-h-screen flex-col justify-center bg-black sm:py-12">
+          <Header activeSection={activeSection}/>
+          <NavBar  handleLinkClick={handleLinkClick}/>
+          <div className="group relative">
+            <div className="flex flex-col w-full z-10 overflow-y-auto scroll-smooth text-white">
+              <div id = "About" className="min-h-screen w-full pt-40 pb-40">
+              <Bodycard handleLinkClick={handleLinkClick}/>
+          
               </div>
-              <div className="pl-8"> 
-                <div id="tag2" className="overflow-hidden font-clash text-7xl font-medium mb-10 ml-32">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ">
-                  About Me
-                  </div>
-                </div>
-                <div className="flex items-start space-x-20 ml-32"> 
-                  <Image
-                  src="/silly.png"
-                  width={350}
-                  height={350}
-                  alt="Picture of the author"
-                  />
-                  <div>
-                    <p className="text-lg w-96"> 
-                    Hello! I'm Adrian and I just graduated Northwestern University with a Bachelor's in Computer Science,
-                    and now am currently pursuing a Master's of Computer Science at Northwestern University. I am experienced 
-                    as a web-developer and machine learning engineer. My interests include machine learning and deep neural networks, 
-                    weightlifiting and fashion. Please feel free to reach out with any 
-                    inquiries or opportunities, and while you are here, check out some of my work!
-                    </p>
-                    <Link href="#tag3" className="bg-white-500 mt-8 text-white text-xl py-2 animate-pulse px-4 rounded text-center flex items-center justify-center ">
-                      Continue
-                    </Link>
-                  </div>
-                </div>
+              <div id="Projects"  onClick={() => handleLinkClick('tag3')} className="min-h-screen w-full pt-20 pb-40 bg-white">
+              <RevealCards handleLinkClick={handleLinkClick}/>
+          
               </div>
-          </div>
+              <div id='Contact' className="min-h-screen w-full pt-52 pb-40 bg-black">
+                <LinkB/>
+              </div>
+              </div>
+            </div>
         </div>
-        
-      </div>
 
     </main>
   );

@@ -1,26 +1,17 @@
+import { useState } from 'react';
 import Link from "next/link";
-const Header = () => {
-    return (
-      <div className="flex justify-between items-center mb-20 mt-8 p-4 ">
-        <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight ml-8">
-          <Link href="#tag1" className="hover:underline">
-            Adrian Hoffer
-          </Link>
-          <p className="md:text-left text-lg mt-3 md:pl-5">Software Engineer</p>
-        </h2>
-        <nav className="flex space-x-4 mr-8">
-          <Link href="#tag2" className="md:text-left text-lg mt-3 hover:underline">
-            About
-          </Link>
-          <Link href="/blog" className="md:text-left text-lg mt-3 hover:underline">
-            Projects
-          </Link>
-          <Link href="/contact" className="md:text-left text-lg mt-3 hover:underline">
-            Contact
-          </Link>
-        </nav>
-      </div>
-    );
-  };
-  
+
+const Header = ({ activeSection }) => {
+  return (
+    <div className={`fixed z-50 top-0 right-0 p-10 w-full flex justify-end ${activeSection === 'Projects' ? 'text-black' : 'text-white'}`}>
+      <h2 className={`text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight md:text-right ${activeSection === 'Projects' ? 'text-black' : 'text-white'}`}>
+        <Link href="#tag1" className="hover:underline">
+          Adrian Hoffer
+        </Link>
+        <p className={`md:text-right text-lg mt-3 md:pl-5 ${activeSection === 'Projects' ? 'text-black' : 'text-white'}`}>Software Engineer</p>
+      </h2>
+    </div>
+  );
+};
+
 export default Header;
