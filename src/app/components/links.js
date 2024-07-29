@@ -24,14 +24,10 @@ const LinkB = () => {
 
 const ClipPathLinks = () => {
   return (
-    <div className="divide-y divide-neutral-900 border border-neutral-900">
-      <div className="grid grid-cols-2 divide-x divide-neutral-900">
-        <LinkBox Icon={SiGmail} href="mailto:adrianhoffer35@gmail.com" />
-        <LinkBox Icon={SiLinkedin} href="https://www.linkedin.com/in/adrian-hoffer-982428250/" />
-      </div>
-      <div className="grid grid-cols-1 divide-x divide-neutral-900">
-        <LinkBox Icon={SiGithub} href="https://github.com/Adrian-DH" />
-      </div>
+    <div className="grid grid-cols-2 divide-y divide-neutral-900 border border-neutral-900">
+      <LinkBox Icon={SiGmail} href="mailto:adrianhoffer35@gmail.com" />
+      <LinkBox Icon={SiLinkedin} href="https://www.linkedin.com/in/adrian-hoffer-982428250/" />
+      <LinkBox Icon={SiGithub} href="https://github.com/Adrian-DH" />
     </div>
   );
 };
@@ -95,7 +91,7 @@ const LinkBox = ({ Icon, href }) => {
     animate(scope.current, {
       clipPath: ENTRANCE_KEYFRAMES[side],
       backgroundColor: "black",
-      color: "white"
+      color: "white",
     });
   };
 
@@ -105,7 +101,7 @@ const LinkBox = ({ Icon, href }) => {
     animate(scope.current, {
       clipPath: EXIT_KEYFRAMES[side],
       backgroundColor: "white",
-      color: "black"
+      color: "black",
     });
   };
 
@@ -118,23 +114,22 @@ const LinkBox = ({ Icon, href }) => {
       onMouseLeave={(e) => {
         handleMouseLeave(e);
       }}
-      className="relative grid h-28 w-full place-content-center sm:h-36 md:h-52 bg-white text-black"
-
+      className="relative grid h-36 w-full place-content-center sm:h-44 md:h-60 lg:h-72 bg-white text-black border-r border-b border-neutral-900 last:border-r-0" // Adjusted heights and widths
     >
-      <Icon className="text-xl sm:text-3xl lg:text-4xl" />
-
+      <Icon className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl" /> 
       <div
         ref={scope}
         style={{
           clipPath: BOTTOM_RIGHT_CLIP,
           backgroundColor: "white",
-          color: "black"
+          color: "black",
         }}
         className="absolute inset-0 grid place-content-center"
       >
-        <Icon className="text-xl sm:text-3xl md:text-4xl" />
+        <Icon className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl" />
       </div>
     </a>
   );
 };
+
 export default LinkB;

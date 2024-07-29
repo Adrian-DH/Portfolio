@@ -5,14 +5,12 @@ import Link from "next/link";
 export const NavBar = ({ handleLinkClick }) => {
   return (
     <SimpleFloatingNav handleLinkClick={handleLinkClick} />
-    
   );
 };
 
-
 const SimpleFloatingNav = ({ handleLinkClick }) => {
   return (
-    <nav className="fixed left-[50%] z-50 top-8 flex w-fit -translate-x-[50%] items-center gap-6 rounded-lg border-[1px] border-white bg-neutral-900 p-2 text-sm text-neutral-500">
+    <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 flex w-fit items-center gap-6 rounded-lg border-[1px] border-white bg-neutral-900 p-2 text-sm text-neutral-500">
       <NavLink href="#About" handleLinkClick={handleLinkClick} section="About">About</NavLink>
       <NavLink href="#Projects" handleLinkClick={handleLinkClick} section="Projects">Projects</NavLink>
       <NavLink href="#Contact" handleLinkClick={handleLinkClick} section="Contact">Contact</NavLink>
@@ -44,23 +42,22 @@ const JoinButton = () => {
   return (
     <button
       className={`
-          relative z-0 flex items-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border-[1px] 
-          border-neutral-700 px-4 py-1.5 font-medium
-         text-neutral-300 transition-all duration-300
-          
-          before:absolute before:inset-0
-          before:-z-10 before:translate-y-[200%]
-          before:scale-[2.5]
-          before:rounded-[100%] before:bg-neutral-50
-          before:transition-transform before:duration-1000
-          before:content-[""]
-  
-          hover:scale-105 hover:border-neutral-50 hover:text-neutral-900
-          hover:before:translate-y-[0%]
-          active:scale-100`}
+        relative z-0 flex items-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border-[1px] 
+        border-neutral-700 px-4 py-1.5 font-medium
+        text-neutral-300 transition-all duration-300
+        before:absolute before:inset-0
+        before:-z-10 before:translate-y-[200%]
+        before:scale-[2.5]
+        before:rounded-[100%] before:bg-neutral-50
+        before:transition-transform before:duration-1000
+        before:content-[""]
+        hover:scale-105 hover:border-neutral-50 hover:text-neutral-900
+        hover:before:translate-y-[0%]
+        active:scale-100`}
     >
       Join waitlist
     </button>
   );
 };
+
 export default NavBar;

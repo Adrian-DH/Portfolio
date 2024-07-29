@@ -18,7 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  overflow: hidden; 
+  
   background: linear-gradient(
       to bottom,
       transparent,
@@ -33,9 +33,6 @@ body {
   }
 }
 
-.no-scroll {
-  overflow: hidden;
-}
 .text-outline-black {
   text-shadow: 
     -1px -1px 0 #000,  
