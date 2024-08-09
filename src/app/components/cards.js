@@ -11,7 +11,7 @@ const RevealCards = ({ handleLinkClick }) => {
     <section className="relative p-8 bg-black">
       <div className="overflow-hidden font-clash text-5xl md:text-7xl font-medium mb-10 mx-auto text-center">
       <div className="pb-4 md:pb-10">
-          My Projects
+          Selected Projects
         </div>
       </div>
       <div className="max-w-4xl mx-auto">
@@ -27,6 +27,13 @@ const RevealCards = ({ handleLinkClick }) => {
             linkHref="https://github.com/bobotamm/lyrical.git"
           />
           <Card
+            title="Computer Vision Maze Game"
+            description="Uses OpenCV and mediapipe to capture inputs from a webcam and finger position to direct square to goal, with lightweight flask frontend."
+            mediaSrc="/screenrecord2.mp4"
+            mediaType="video"
+            linkHref="https://github.com/Adrian-DH/PuzzleGame"
+          />
+          <Card
             title="SchoolSage"
             description="A web app to connect students to tutors in the Chicagoland area. Allows users to sign up and post their skills to be matched with potential tutors. Built using React and Firestore."
             mediaSrc="/sage1.png"
@@ -40,13 +47,7 @@ const RevealCards = ({ handleLinkClick }) => {
             mediaType="image"
             linkHref="https://github.com/nu-ce346-student/f23-final-project-yuexi-adrian-dev.git"
           />
-          <Card
-            title="See More!"
-            description="Click the link to see all of my projects on GitHub"
-            mediaSrc="/gith.png"
-            mediaType="image"
-            linkHref="https://github.com/Adrian-DH"
-          />
+          
         </div>
       </div>
     </section>
