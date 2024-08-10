@@ -34,8 +34,8 @@ const Bodycard = ({ handleLinkClick }) => {
             <p className="text-xl text-center md:text-left font-bold text-white"> 
               Hello! I&apos;m Adrian and I just graduated from Northwestern University with a Bachelor&apos;s in Computer Science,
               and now am currently pursuing a Master&apos;s of Computer Science at Northwestern University. I am experienced 
-              as a web developer and machine learning engineer. My interests include machine learning, 
-              weightlifting, and fashion. 
+              as a web developer and machine learning engineer. I love learning about machine learning and algorithms, and in my free time I enjoy
+              weightlifting, music and fashion. 
               I&apos;m very interested in deep learning  and algorithmic research and its applications in other fields. Currently I am exploring machine learning 
               models for audio processing in lab. 
               Click on the link below to access my resume!
